@@ -9,6 +9,60 @@ from sdr_reports_data.database import Column, PkModel, db, reference_col, relati
 from sdr_reports_data.extensions import bcrypt
 
 
+
+class Lista1(PkModel):
+    """Modelo para la primera lista CSV."""
+
+    __tablename__ = "lista1"
+
+    id = Column(db.Integer, primary_key=True)
+    first_name = Column(db.String(80), nullable=False)
+    last_name = Column(db.String(80), nullable=False)
+    url = Column(db.String(255), nullable=False)
+    email_address = Column(db.String(80), nullable=False)
+    company = Column(db.String(100), nullable=False)
+    position = Column(db.String(100), nullable=False)
+    connected_on = Column(db.Date, nullable=True)
+    
+    def __repr__(self):
+        """Representa la instancia como una cadena única."""
+        return f"<Lista1({self.first_name} {self.last_name})>"
+
+class Lista2(PkModel):
+    """Modelo para la segunda lista CSV."""
+
+    __tablename__ = "lista2"
+
+    id = Column(db.Integer, primary_key=True)
+    first_name = Column(db.String(80), nullable=False)
+    last_name = Column(db.String(80), nullable=False)
+    linkedin_url = Column(db.String(255), nullable=False)
+    email = Column(db.String(80), nullable=False)
+    company = Column(db.String(100), nullable=False)
+    title = Column(db.String(100), nullable=False)
+    seniority = Column(db.String(100), nullable=True)
+    last_contacted = Column(db.Date, nullable=True)
+    website = Column(db.String(255), nullable=True)
+    industry = Column(db.String(100), nullable=True)
+    city = Column(db.String(100), nullable=True)
+    state = Column(db.String(100), nullable=True)
+    country = Column(db.String(100), nullable=True)
+    
+    def __repr__(self):
+        """Representa la instancia como una cadena única."""
+        return f"<Lista2({self.first_name} {self.last_name})>"
+
+
+
+
+
+
+
+
+
+
+
+
 class Role(PkModel):
     """A role for a user."""
 
