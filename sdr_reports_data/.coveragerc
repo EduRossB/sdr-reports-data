@@ -1,0 +1,6 @@
+[run]
+source = sdr_reports_data
+omit = 
+    tests/*
+    autoapp.py
+
